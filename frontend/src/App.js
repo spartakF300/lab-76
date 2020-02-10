@@ -38,6 +38,7 @@ class App extends Component {
                 <Form
                     onChangeHandler={this.onChangeHandler}
                     post={this.postSend}
+                    value={this.state}
                 />
                 {this.props.error && <div>{this.props.error.message}</div>}
                 <div className="messWrap">
@@ -47,6 +48,7 @@ class App extends Component {
                     message={item.message}
                     date={item.dateTime}
                     key={item.id}
+
 
                     />
                 })}
