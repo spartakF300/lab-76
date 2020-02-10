@@ -21,6 +21,7 @@ class App extends Component {
         return nextProps.dateTime !== this.props.dateTime || nextProps.error !== this.props.err
     };
 
+
     onChangeHandler = (e) => {
         this.setState({[e.target.name]: e.target.value})
 
@@ -32,7 +33,7 @@ class App extends Component {
     };
 
     render() {
-        this.props.messages.reverse();
+
         return (
             <div className="App">
                 <Form
@@ -40,7 +41,7 @@ class App extends Component {
                     post={this.postSend}
                     value={this.state}
                 />
-                {this.props.error && <div>{this.props.error.message}</div>}
+                {this.props.error && <div style={{color:"red"}}>{this.props.error.message}</div>}
                 <div className="messWrap">
                 {this.props.messages && this.props.messages.map((item) => {
                     return <Message
@@ -60,7 +61,7 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        messages: state.messages,
+        messages: state.messages.reverse(),
         dateTime: state.dateTime,
         error: state.error
     }
