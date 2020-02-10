@@ -17,6 +17,7 @@ const readFile =  ()=>{
   })
 };
 const writeFiles =  ()=>{
+    console.log('');
     return    new Promise((resolve,reject)=>{
 let dataString = JSON.stringify(data, null, 2);
         fs.writeFile(filename,dataString, err =>{
